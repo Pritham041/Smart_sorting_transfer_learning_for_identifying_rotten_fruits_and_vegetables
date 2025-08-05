@@ -3,6 +3,8 @@ from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 import pandas as pd
 import numpy as np
+import os
+
 
 app = Flask(__name__)
 
@@ -41,5 +43,7 @@ def predict():
             return render_template('index.html', label=label,img_path=img_path)
     return render_template('index.html')
 
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(debug=False, host='0.0.0.0', port=port)
