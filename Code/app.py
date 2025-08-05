@@ -11,7 +11,7 @@ class_indices =  {'Apple__Healthy': 0, 'Apple__Rotten': 1, 'Banana__Healthy': 2,
 class_index = {v: k for k, v in class_indices.items()}
 
 # Load the pre-trained model
-model = load_model('fresh_vs_rotten.h5')
+model = load_model('fresh_vs_rotten.keras')
 
 @app.route('/')
 def home():
